@@ -2,7 +2,7 @@
 /* Reset CSS
  * --------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Patua+One');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Encode+Sans:300,400,500,600,700,800');
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
@@ -40,7 +40,7 @@ h1,h2,h3,h4,h5,h6 {
     margin:0;
     padding:0;
     color:#fff;
-    font-family: 'Patua One', cursive;
+    font-family: 'Encode Sans', sans-serif;
 }
 
 q:before,q:after {
@@ -122,54 +122,7 @@ p, li {
 	padding: 0;
 	margin:0;
 }
-.twitter-share-button{
-	position: fixed;
-	z-index: 99;
-	right: 149px;
-	top: 9px;
-}
-#download{
-	margin: 10px 0 0 0;
-	padding: 15px 10px;
-	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-	background-color: #49afcd;
-	background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
-	background-image: -ms-linear-gradient(top, #5bc0de, #2f96b4);
-	background-image: -webkit-gradient(linear,0 0,0 100%,from( #5bc0de),to( #2f96b4));
-	background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
-	background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
-	background-image: linear-gradient(top, #5bc0de, #2f96b4);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#2f96b4', GradientType=0);
-	border-color: #2f96b4 #2f96b4 #1f6377;
-	border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	vertical-align: middle;
-	cursor: pointer;
-	display: inline-block;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
-	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
-	box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
-}
-#download a{
-	text-decoration:none;
-	color:#fff;
-}
-#download:hover{
-	text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-	background-color: #2F96B4;
-	background-position: 0 -15px;
-	-webkit-transition: background-position .1s linear;
-	-moz-transition: background-position .1s linear;
-	-ms-transition: background-position .1s linear;
-	-o-transition: background-position .1s linear;
-	transition: background-position .1s linear;
-}
 #infoMenu{
 	height: 20px;
 	color: #f2f2f2;
@@ -197,15 +150,6 @@ p, li {
 	position:relative;
 }
 
-/* Demos Menu
- * --------------------------------------- */
- #demosMenu{
-	position:fixed;
-	bottom: 10px;
-	right:10px;
-	z-index: 999;
- }
-
  /* Erikari
  * --------------------------------------- */
  .borderr{
@@ -214,6 +158,7 @@ margin: auto;
  }
  p {
 	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	color: white;
@@ -224,8 +169,12 @@ li {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	color: white;
+	font-weight: 700;
 	padding: 0.3em 0;
 	font-size: 1.5em;
+}
+h1{
+	font-weight: 800;
 }
  .roundborder{
     border-radius: 60px;
@@ -262,4 +211,9 @@ li {
 	position: absolute;
 	width: 100%;
 	padding: 0.3em;
+}
+.col2 {
+	width: 49%;
+	float: left;
+	margin: auto;
 }
