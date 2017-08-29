@@ -69,7 +69,7 @@ h1{
 h2{
 	font-size: 3em;
 }
-p{
+p, li {
 	font-size: 2em;
 }
 .intro p{
@@ -196,48 +196,6 @@ p{
 	display:inline-block;
 	position:relative;
 }
-#examplesList{
-	display:none;
-	background: #282828;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	padding: 20px;
-	float: left;
-	position: absolute;
-	bottom: 29px;
-	right: 0;
-	width:638px;
-	text-align:left;
-}
-#examplesList ul{
-	padding:0;
-}
-#examplesList ul li{
-	display:block;
-	margin: 5px 0;
-}
-#examplesList ul li a{
-	color: #BDBDBD;
-	margin:0;
-}
-#examplesList ul li a:hover{
-	color: #f2f2f2;
-}
-#examplesList .column{
-	float: left;
-	margin: 0 20px 0 0;
-}
-#examplesList h3{
-	color: #f2f2f2;
-	font-size: 1.2em;
-	margin: 0 0 15px 0;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-	padding: 0 0 5px 0;
-}
 
 /* Demos Menu
  * --------------------------------------- */
@@ -254,13 +212,20 @@ p{
 width: 90%;
 margin: auto;
  }
- p{
+ p {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	color: white;
 	padding: 1em 0;
-
+}
+li {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: white;
+	padding: 0.3em 0;
+	font-size: 1.5em;
 }
  .roundborder{
     border-radius: 60px;
