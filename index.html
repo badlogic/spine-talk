@@ -7,11 +7,26 @@
 
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="css/examples.css" />
+	<link rel="stylesheet" type="text/css" href="js/demos/demos.css" />
+
+	<script src="js/spine-webgl.js"></script>
+
+	<script src="js/demos/utils.js"></script>
+	<script src="js/demos/spritesheets.js"></script>
+	<script src="js/demos/imagechanges.js"></script>
+	<script src="js/demos/transitions.js"></script>
+	<script src="js/demos/meshes.js"></script>
+	<script src="js/demos/skins.js"></script>
+	<script src="js/demos/hoverboard.js"></script>
+	<script src="js/demos/vine.js"></script>
+	<script src="js/demos/stretchyman.js"></script>
+	<script src="js/demos/tank.js"></script>
+	<script src="js/demos/transforms.js"></script>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/scrolloverflow.js"></script>
-	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script src="js/scrolloverflow.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
@@ -20,6 +35,18 @@
 				menu: '#menu',
 				scrollingSpeed: 700
 			});
+
+			spineDemos.loadSliders();
+			spritesheetsDemo(spineDemos.setupRendering);
+			imageChangesDemo(spineDemos.setupRendering);
+			transitionsDemo(spineDemos.setupRendering);
+			meshesDemo(spineDemos.setupRendering);
+			skinsDemo(spineDemos.setupRendering);
+			hoverboardDemo(spineDemos.setupRendering);
+			vineDemo(spineDemos.setupRendering);
+			stretchymanDemo(spineDemos.setupRendering);
+			tankDemo(spineDemos.setupRendering);
+			transformsDemo(spineDemos.setupRendering);
 		});
 	</script>
 
@@ -36,7 +63,7 @@
 
 	<div class="section" id="section1">
 		<!-- problem: if one clicks to stop the video he will be trapped forever in this slide, disablekb=1 should have solved it, but it's not working -->
-	    <iframe id="myVideo" width="100" height="100" src="https://www.youtube.com/embed/DLw_SwwFDoc?rel=0&amp;showinfo=0&amp;controls=0&amp;disablekb=1" frameborder="0" allowfullscreen data-autoplay></iframe>
+	    <!--<iframe id="myVideo" width="100" height="100" src="https://www.youtube.com/embed/DLw_SwwFDoc?rel=0&amp;showinfo=0&amp;controls=0&amp;disablekb=1" frameborder="0" allowfullscreen data-autoplay></iframe>-->
 	</div>
 
 	<div class="section" id="section2">
@@ -66,13 +93,92 @@
 	</div>
 
 	<div class="section slide-container" id="section4">
+		<div class="slide">
+			<h2>Why Spine?</h2>
+		</div>
+		<div class="slide">
+			<h2>Spine vs. sprite sheet</h2>
+			<div class="aspect">
+				<div><canvas id="spritesheets-canvas"></canvas></div>
+			</div>
+			<div id="spritesheets-timeslider" class="slider filled"></div>
+		</div>
+		<div class="slide">
+			<h2>Spine vs. sprite sheet</h2>
+			<img height="70%" style="max-width: 1000px;" src="js/demos/spine-versus-sprite-sheets.png" alt="spritesheets" />
+		</div>
+		<div class="slide">
+			<h2>Spine with frame-based animation</h2>
+			<div class="aspect"><div><canvas id="imagechanges-canvas"></canvas></div></div>
+			<div id="imagechanges-timeline" class="slider"></div>
+			<input id="imagechanges-playbutton" type="button" value="Pause"></input><br>
+			<select id="imagechanges-skeleton" size="2"></select>
+		</div>
+		<div class="slide">
+			<h2>Transitions and layering</h2>
+			<div class="aspect"><div><canvas id="transitions-canvas"></canvas></div></div>
+			Time multiplier
+			<div id="transitions-timeslider" class="slider filled"></div>
+		</div>
+		<div class="slide">
+			<h2>Mesh deformation</h2>
+			<div class="aspect"><div><canvas id="meshes-canvas"></canvas></div></div>
+			<div id="meshes-timeline" class="slider"></div>
+			<input id="meshes-playbutton" type="button" value="Pause"></input><br>
+			<select id="meshes-skeleton" size="3"></select><br>
+			<input type="checkbox" id="meshes-drawbonescheckbox" style="color: #fff;"></input> Draw bones<br>
+			<input type="checkbox" id="meshes-drawmeshtrianglescheckbox" style="color: #fff;"></input> Draw triangles<br>
+		</div>
+		<div class="slide">
+			<h2>Skins</h2>
+			<div class="aspect"><div><canvas id="skins-canvas"></canvas></div></div>
+			<select id="skins-skin"></select><br>
+			<button id="skins-randomizeattachments">Random Attachments</button>
+			<button id="skins-swingsword">Swing Sword</button><br>
+			<input id="skins-randomizeskins" type="checkbox" checked=true></input> Randomize skin
+		</div>
+		<div class="slide">
+			<h2>Inverse kinematics</h2>
+			<div class="aspect"><div><canvas id="hoverboard-canvas"></canvas></div></div>
+			<input id="hoverboard-drawbones" type="checkbox"></input> Display Bones
+		</div>
+		<div class="slide">
+			<h2>Path constraints</h2>
+			<div class="aspect"><div><canvas id="vine-canvas"></canvas></div></div>
+			<div id="vine-timeline" class="slider"></div>
+			<input id="vine-playbutton" type="button" value="Pause"></input><br>
+			<input id="vine-drawbones" type="checkbox"></input> Display bones &amp; path
+		</div>
+		<div class="slide">
+			<h2>Path constraints</h2>
+			<div class="aspect"><div><canvas id="stretchyman-canvas"></canvas></div></div>
+			<input id="stretchyman-drawbones" type="checkbox"></input> Display bones
+		</div>
+		<div class="slide">
+			<h2>Transform constraints</h2>
+			<div class="aspect"><div><canvas id="tank-canvas"></canvas></div></div>
+			<div id="tank-timeline" class="slider"></div>
+			<input id="tank-playbutton" type="button" value="Pause"></input><br>
+			<input id="tank-drawbones" type="checkbox"></input> Display bones
+		</div>
+		<div class="slide">
+			<h2>Transform constraints</h2>
+			<div class="aspect"><div><canvas id="transforms-canvas"></canvas></div></div>
+			Rotation offset
+			<div id="transforms-rotationoffset" class="slider filled"></div><br>
+			Translation mix
+			<div id="transforms-translationmix" class="slider filled"></div>
+		</div>
+	</div>
+
+	<div class="section slide-container" id="section5">
 		<h1>A brief history of...</h1>
 		<div class="slide">
 			<img width="70%" style="max-width: 1000px;" src="img/thisisnate.jpg" alt="nate" />
 		</div>
 		<div class="slide">
 			<!-- problem: if one clicks to stop the video he will be trapped forever in this slide, disablekb=1 should have solved it, but it's not working -->
-	    	<iframe id="myVideo2" width="800" height="600" src="https://www.youtube.com/embed/d7wntjD8YR8?rel=0&amp;showinfo=0&amp;controls=0&amp;disablekb=1" frameborder="0" allowfullscreen data-autoplay></iframe>
+	    	<!--<iframe id="myVideo2" width="800" height="600" src="https://www.youtube.com/embed/d7wntjD8YR8?rel=0&amp;showinfo=0&amp;controls=0&amp;disablekb=1" frameborder="0" allowfullscreen data-autoplay></iframe>-->
 		</div>
 		<div class="slide">
 			<img style="width:80%; max-width: 800px;" src="img/editor-old-1.png" alt="Editor" />
@@ -89,11 +195,11 @@
 		</div>
 	</div>
 
-	<div class="section" id="section5">
+	<div class="section" id="section6">
 		<p>Editor Demo</p>
 	</div>
 
-	<div class="section slide-container" id="section6">
+	<div class="section slide-container" id="section7">
 		<h1>The Runtimes</h1>
 		<div class="slide">
 			<p>Support for all major engines</p>
@@ -115,12 +221,12 @@
 		</div>
 	</div>
 
-	<div class="section" id="section7">
+	<div class="section" id="section8">
 		<p>Unity Demo</p>
-		<iframe style="width: 70vw; height: 70vh; overflow: hidden; border: none;" src="assets/build/unity-example/index.html"></iframe>
+		<!--<iframe style="width: 70vw; height: 70vh; overflow: hidden; border: none;" src="assets/build/unity-example/index.html"></iframe>-->
 	</div>
 
-	<div class="section slide-container" id="section8">
+	<div class="section slide-container" id="section9">
 		<h1>Business Side - Licensing</h1>
 		<div class="slide">
 			<h2>Spine should be affordable for indies</h2>
@@ -151,7 +257,7 @@
 		</div>
 	</div>
 
-	<div class="section" id="section9">
+	<div class="section" id="section10">
 		<h1>Business Side - Customer Support</h1>
 		<ul>
 			<li>90% of support requests via forum</li>
@@ -161,7 +267,7 @@
 		</ul>
 	</div>
 
-		<div class="section" id="section10">
+		<div class="section" id="section11">
 		<h1>Business Side - Licensing</h1>
 		<ul>
 			<li>Stripe for credit card payments &amp; Alipay</li>
@@ -171,11 +277,11 @@
 		</ul>
 	</div>
 
-	<div class="section" id="section11">
+	<div class="section" id="section12">
 		<h1>Business Side - Marketing</h1>
 	</div>
 
-	<div class="section" id="section9">
+	<div class="section" id="section13">
 		<h1>Questions?</h1>
 	</div>
 
