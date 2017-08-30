@@ -63,7 +63,7 @@
 
 	<div class="section" id="section1">
 		<!-- problem: if one clicks to stop the video he will be trapped forever in this slide, disablekb=1 should have solved it, but it's not working -->
-	    <!--<iframe id="myVideo" width="100" height="100" src="https://www.youtube.com/embed/DLw_SwwFDoc?rel=0&amp;showinfo=0&amp;controls=0&amp;disablekb=1" frameborder="0" allowfullscreen data-autoplay></iframe>-->
+	    <iframe id="myVideo" width="100" height="100" src="https://www.youtube.com/embed/DLw_SwwFDoc?rel=0&amp;showinfo=0&amp;controls=0&amp;disablekb=1" frameborder="0" allowfullscreen data-autoplay></iframe>
 	</div>
 
 	<div class="section" id="section2">
@@ -82,14 +82,6 @@
 		<div class="slide">
 			<p>Runtimes for all the engines</p>
 			<img style="width:80%; max-width: 900px;" src="img/engines-logo.png" alt="engines" />
-		</div>
-		<div class="slide">
-			<p>Reduce 2D art creation time &amp; asset sizes</p>
-			<!-- here I'd put the atlas size confrontation-->
-		</div>
-		<div class="slide">
-			<p>Runtime procedural animations (physics, IK, …)</p>
-			<!-- here is probably a good place to put a little demo-->
 		</div>
 	</div>
 
@@ -179,7 +171,7 @@
 		</div>
 		<div class="slide">
 			<!-- problem: if one clicks to stop the video he will be trapped forever in this slide, disablekb=1 should have solved it, but it's not working -->
-	    	<!--<iframe id="myVideo2" width="800" height="600" src="https://www.youtube.com/embed/d7wntjD8YR8?rel=0&amp;showinfo=0&amp;controls=0&amp;disablekb=1" frameborder="0" allowfullscreen data-autoplay></iframe>-->
+	    	<iframe id="myVideo2" width="800" height="600" src="https://www.youtube.com/embed/d7wntjD8YR8?rel=0&amp;showinfo=0&amp;controls=0&amp;disablekb=1" frameborder="0" allowfullscreen data-autoplay></iframe>
 		</div>
 		<div class="slide">
 			<img style="width:80%; max-width: 800px;" src="img/editor-old-1.png" alt="Editor" />
@@ -224,21 +216,21 @@
 
 	<div class="section" id="section8">
 		<p>Unity Demo</p>
-		<!--<iframe style="width: 70vw; height: 70vh; overflow: hidden; border: none;" src="assets/build/unity-example/index.html"></iframe>-->
+		<iframe style="width: 70vw; height: 70vh; overflow: hidden; border: none;" src="assets/build/unity-example/index.html"></iframe>
 	</div>
 
 	<div class="section slide-container" id="section9">
 		<h1>Business Side - Licensing</h1>
 		<div class="slide">
-			<h2>Spine should be affordable for indies</h2>
+			<h2 style="color: orange">Spine should be affordable for indies</h2>
 			<p>One-time payment, get updates to editor &amp; runtime for life!</p>
 		</div>
 		<div class="slide">
-			<h2>Big enterprises should proportionally fund development</h2>
+			<h2 style="color: orange">Big enterprises should proportionally fund development</h2>
 			<p>Above $500k/year in revenue? Annual Enterprise license subscription!</p>
 		</div>
 		<div class="slide">
-			<h2>Don’t strain educational institution budgets </h2>
+				<h2 style="color: orange">Don’t strain educational institution budgets </h2>
 			<p>Education bulk license subscription at discount</p>
 		</div>
 		<div class="slide">
@@ -248,28 +240,59 @@
 			<p>One license text to rule them all</p>
 		</div>
 		<div class="slide">
-			<p>Lessons learned</p>
-			<ul>
-			<li>Big corp always want changes, keep them minimal if any at all!</li>
-			<li>Iterating license takes time and costs money. Factor into your price!</li>
-			<li>If you are a small company, code escrow will make big corp make it easier to pull trigger</li>
-			<li>If your product has exceptional quality, nobody will ask for a service license agreement :)</li>
-			</ul>
+			<h2 style="color: orange;">Lessons learned</h2>
+			<p>Big corp always want changes, keep them minimal if any at all!</p>
+		</div>
+
+		<div class="slide">
+			<h2 style="color: orange;">Lessons learned</h2>
+			<p>Iterating license takes time and costs money. Factor into your price!</p>
+		</div>
+
+		<div class="slide">
+			<h2 style="color: orange;">Lessons learned</h2>
+			<p>If you are a small company, source code escrow will make big corp make it easier to pull trigger</p>
+		</div>
+
+		<div class="slide">
+			<h2 style="color: orange;">Lessons learned</h2>
+			<p>If your product has exceptional quality, nobody will ask for a service license agreement :)</p>
 		</div>
 	</div>
 
 	<div class="section" id="section10">
 		<h1>Business Side - Customer Support</h1>
-		<ul>
-			<li>90% of support requests via forum</li>
-			<li>Email usually for business matters</li>
-			<li>No guaranteed response times, but generally < 24h</li>
-			<li>SLA available at a reasonable price</li>
-		</ul>
+		<div class="slide">
+			<p style="color: orange;">98% of support requests via forum, GitHub</p>
+			<ul>
+				<li>Huge knowledgebase on top of documentation</li>
+				<li>Searchable by future users</li>
+				<li>Links between forum and GitHub issues</li>
+				<li>Users help users, unlike with ZenDesk et al.</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<p style="color: orange;">No guaranteed response times, but generally < 24 hours</p>
+			<ul>
+				<li>Continuous deployment lets us push out fixes within minutes</li>
+				<li>Encourages users to report more and feel listened to!</li>
+				<li>Users supplement QA (essential for small company!)</li>
+				<li>Balance staying on top of user reports with improving product</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<p style="color: orange;">Email for business matters</p>
+			<ul>
+				<li>Entire team has access to same account</li>
+				<li>Emails triaged using labels</li>
+				<li>Inbox == TODO</li>
+				<li>Low-tech, but so much better than ZenDesk et al.</li>
+			</ul>
+		</div>
 	</div>
 
-		<div class="section" id="section11">
-		<h1>Business Side - Licensing</h1>
+	<div class="section" id="section11">
+		<h1>Business Side - Payments, DRM, ...</h1>
 		<ul>
 			<li>Stripe for credit card payments &amp; Alipay</li>
 			<li>Alipay essential for China</li>
