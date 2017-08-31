@@ -246,3 +246,10 @@ h1{
 	float: left;
 	margin: auto;
 }
+#section12{
+	background-size: cover;
+	background-image: url(../img/marketing3.jpg);
+}
+#section12 h1{
+	text-shadow: 0px 6px 23px #000000b3;
+}
