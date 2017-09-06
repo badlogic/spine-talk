@@ -231,7 +231,7 @@ h1{
   		background-image: /* our video */;
   		background-position: center center;
   		background-size: contain;
-   		object-fit: cover; /*cover video background */
+   		/*object-fit: cover; /*cover video background */
    		z-index:3;
 	}
 .slide-container h1{
